@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xpp-debt-scan"
+version = "1.0.0"
+description = "Free deterministic tech-debt scanner for Dynamics 365 F&O X++ codebases"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Bluewizarding Consulting LLC" }]
+keywords = ["dynamics-365", "xpp", "x++", "technical-debt", "static-analysis", "d365fo"]
+
+[project.urls]
+Homepage = "https://github.com/BlueWizarding/xpp-debt-scan"
+Audit = "https://bluewizarding.com/audit"
+
+[project.scripts]
+xppdebtscan = "xppdebtscan.cli:main"
+
+[tool.setuptools]
+packages = ["xppdebtscan"]
