@@ -21,3 +21,15 @@ python -m pytest -q
 Single `main` branch today (public OSS, low churn). Feature branches open a PR to `main`;
 the operator merges. Provision `dev` and `test` if active development resumes, per the
 estate branch-naming rule.
+
+## Git home
+
+This repo's home is the estate's own Forgejo server: `https://git.int.bluewizarding.com/bluewizard/xpp-debt-scan` (the `origin` remote).
+It moved from GitHub on 2026-11-13. Check with `git remote -v`.
+
+- GitHub (`BlueWizarding/xpp-debt-scan`) is a copy. Forgejo pushes every commit to it, because it is the public copy that people clone.
+- Never push to GitHub directly. Push to `origin`; the copy follows, and a branch that exists only on GitHub is removed at the next sync.
+- Workflows on the GitHub copy that trigger on a push still run. Ones that trigger on a GitHub pull request do not, because pull requests now live on Forgejo.
+- Open and merge pull requests on Forgejo through its API, not `gh`. The merge into `main` is still the operator's gate.
+- Issues were not moved. Any GitHub Issues for this repo are still on GitHub.
+- Estate rule: `~/.claude/rules/forgejo-is-home.md`.
